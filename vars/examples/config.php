@@ -1,26 +1,26 @@
 <?php
 	/*
 		vIDS (virtual Information Display System) for VATSIM
-		
+
 		Filename: config.php
 		Function: Defines system configuration parameter & global variables
 		Created: 8/12/21
-		Edited: 
-		
-		Changes: 
-		
+		Edited:
+
+		Changes:
+
 		Notes: Use this file to configure vIDS for your facility. Limitations: this configuration does not impact static text and references in modal boxes - you need to edit modal.php to adjust this information to fit your
-		ARTCC or facility. 
-		
+		ARTCC or facility.
+
 		To set your ARTCC logo - place a file named "logo.png" in the img/ directory
 	*/
-	
+
 //namespace vids;
 
 // Toggles debug mode on/off. Debug mode is NOISY - it throws additional execution data and dumps the reply JSON in a viewable container
 define('DEBUG', false);
 // Set persistent storage mode. False = stores data in .dat files on server. True = stores data in database.
-define('USE_DB', false);
+define('USE_DB', true);
 // Enable bug reporting system for users (stores reported bugs in rss feed)
 define('BUG_REPORTING', true);
 // Set to true if traffic management module is available
@@ -28,27 +28,27 @@ define('TRAFFIC_MANAGEMENT', false);
 // Set to true if airspace explorer module is available
 define('AIRSPACE_EXPLORER', false);
 // URL for production site
-define('PROD_URL', 'ztlarcc.org');
+define('PROD_URL', 'zauartcc.org');
 // Grant admin priveleges (optional, enter CID). Grants 1 user admin priveleges without being an ARTCC staff member.
-define('ACONST', 999);
+define('ACONST', 1202744);
 // Identifier for the overarching facility (normally the ARTCC). Ex: ZTL
-define('FACILITY_ID', 'ZTL');
+define('FACILITY_ID', 'ZAU');
 // Default major airfield ID. Ex: ATL (3-letter FAA ID)
-define('DEFAULT_AFLD_ID', 'ATL');
+define('DEFAULT_AFLD_ID', 'ORD');
 // Default major airfield ICAO ID. Ex: KATL (4-letter ICAO ID)
-define('DEFAULT_AFLD_ICAO', 'KATL');
+define('DEFAULT_AFLD_ICAO', 'KORD');
 // Large TRACON ID. Ex: A80
-define('TRACON_ID', 'A80');
+define('TRACON_ID', 'C90');
 // Large TRACON long name. Ex: A80 Atlanta Large TRACON
-define('TRACON_LONG_NAME', 'A80 Atlanta Large TRACON');
+define('TRACON_LONG_NAME', 'Chicago TRACON');
 // Traffic flow direction - displayed in the IDS next to the ATIS ID (Ex. EAST/WEST). Create custom flow names by adding them to this array in format RWY ID=>FLOW NAME (Ex. '09'=>'EAST'). Only enter runway numbers - do not enter left/right/center characters.
-$flow_override = array('08'=>'EAST','09'=>'EAST','10'=>'EAST','26'=>'WEST','27'=>'WEST','28'=>'WEST');
+$flow_override = array('09'=>'EAST','10'=>'EAST','27'=>'WEST','28'=>'WEST');
 // Arrival runways
-$arrival_runways = array('08L','09R','10','08R','09L','26R','27L','28','26L','27R');
+$arrival_runways = array('04R','09L','09C','10C','10R','22R','27C','27R','28C','28R');
 $approach_types = array('VIS','ILS');
 // Departure runways
-$departure_runways = array('08R','09L','10','08L','09R','26L','27R','28','26R','27L');
-$departure_types = array('RV','ROTG');
+$departure_runways = array('04L','09R','10L','22L','27L','28R');
+$departure_types = array('RV');
 // Airfield configuration options
 // This allows you to have custom airfield configuration options that are switchable (on/off) and displayed under "Afld config"
 // Format = array("ShortNameNoSpaces","Long Name","Description");
@@ -66,21 +66,21 @@ $pos6 = array(TRACON_ID . " TAR",array('H'=>'H','D'=>'D','L'=>'L','Y'=>'Y'),arra
 $pos7 = array(TRACON_ID . " Outer",array('M'=>'M','W'=>'W','Z'=>'Z','R'=>'R','E'=>'E','3E'=>'3E'),array('N'=>'N','P'=>'P','F'=>'F','X'=>'X','G'=>'G','C43'=>'C43','C49'=>'C49','C16'=>'C16','C19'=>'C19','C21'=>'C21','C09'=>'C09'));
 // Departure gates - define the departure gate names for your airspace. This is used for the display in the upper right corner of the local and large TRACON
 // displays to turn individual gates on/off and define RNAV fixes for routing traffic through
-$departure_gates = array('N1','N2','W2','W1','S2','S1','E1','E2');
+$departure_gates = array('PMPKN','RAYNR','EBAKE','DUFEE','ADIME','MOBLE','LEWKE','ACITO','BACEN','CMSKY','DENNT','EARND','MYKIE','NOONY','OLINN','PEKUE');
 // This is used to build a UI to assign departure gates to a specific controller. Format: array('position name','position name',etc...). Use STARS position IDs - no spaces!
 $departure_positions = $pos3[1];
 // Configurable list of airfields (for TRACON/ARTCC view) - you may create as many of these as you'd like, the view is optimized for multiples of 3
 // For the 'id' field, ensure that you use the 4-character ICAO airfield ID (Ex. KATL)
 $satellite_fields = array(
-array("id"=>"KPDK","name"=>"DeKalb-Peachtree (PDK)","hours"=>"1130–0400Z‡ Mon–Fri, 1200–0400Z‡ Sat–Sun","MF"=>"1130-0400","SS"=>"1200-0400","DST_Adjust"=>true),
-array("id"=>"KFTY","name"=>"Fulton County (FTY)","hours"=>"Attended continuously","MF"=>"0000-2400","SS"=>"0000-2400","DST_Adjust"=>true),
-array("id"=>"KMGE","name"=>"Dobbins ARB (MGE)","hours"=>"1200–0400Z‡","MF"=>"1200-0400","SS"=>"1200-0400","DST_Adjust"=>true),
-array("id"=>"KRYY","name"=>"Cobb Co/McCollum (RYY)","hours"=>"1200–0400Z‡","MF"=>"1200-0400","SS"=>"1200-0400","DST_Adjust"=>true),
-array("id"=>"KLZU","name"=>"Gwinnett Co (LZU)","hours"=>"1200–0200Z‡","MF"=>"1200-0200","SS"=>"1200-0200","DST_Adjust"=>true),
-array("id"=>"KAHN","name"=>"Athens (AHN)","hours"=>"1300–0100Z‡","MF"=>"1300-0100","SS"=>"1300-0100","DST_Adjust"=>true),
-array("id"=>"KMCN","name"=>"Macon Regional (MCN)","hours"=>"1300–0100Z‡","MF"=>"1300-0100","SS"=>"1300-0100","DST_Adjust"=>true),
-array("id"=>"KWRB","name"=>"Robins AFB (WRB)","hours"=>"Attended continuously","MF"=>"0000-2400","SS"=>"0000-2400","DST_Adjust"=>true),
-array("id"=>"KCSG","name"=>"Columbus (CSG)","hours"=>"1400–0200Z‡","MF"=>"1400-0200","SS"=>"1400-0200","DST_Adjust"=>true)
+array("id"=>"KPWK","name"=>"Chicago Executive (PWK)","hours"=>"1200–0400Z‡ Mon–Fri, 1300–0400Z‡ Sat–Sun","MF"=>"1200-0400","SS"=>"1300-0400","DST_Adjust"=>true),
+array("id"=>"KMDW","name"=>"Chicago Midway (MDW)","hours"=>"Attended continuously","MF"=>"0000-2400","SS"=>"0000-2400","DST_Adjust"=>true),
+array("id"=>"KGYY","name"=>"Chicago Gary (GYY)","hours"=>"1100–0400Z‡","MF"=>"1100-0400","SS"=>"1100-0400","DST_Adjust"=>true),
+array("id"=>"KUGN","name"=>"Waukegon (UGN)","hours"=>"1200–0200Z‡","MF"=>"1200-0200","SS"=>"1200-0200","DST_Adjust"=>true),
+array("id"=>"KARR","name"=>"Chicago Aurora (ARR)","hours"=>"1300–0300Z‡","MF"=>"1300-0300","SS"=>"1300-0300","DST_Adjust"=>true),
+array("id"=>"KDPA","name"=>"Chicago Dupage (DPA)","hours"=>"Attended continuously","MF"=>"0000-2400","SS"=>"0000-2400","DST_Adjust"=>true),
+array("id"=>"KLOT","name"=>"Lewis University (LOT)","hours"=>"1300–0100Z‡","MF"=>"1300-0100","SS"=>"1300-0100","DST_Adjust"=>true),
+array("id"=>"KIGQ","name"=>"Lansing Municipal (IGQ)","hours"=>"Attended continuously","MF"=>"0000-2400","SS"=>"0000-2400","DST_Adjust"=>true),
+array("id"=>"KDKB","name"=>"Dekalb (DKB)","hours"=>"1400–0200Z‡","MF"=>"1400-0200","SS"=>"1400-0200","DST_Adjust"=>true)
 );
 
 // ************************************ DO NOT EDIT BELOW THIS LINE ************************************
@@ -142,7 +142,7 @@ function js_globals() { // Translates PHP globals into JS globals
 		$rwy_flow .= "$flow : { arr : ['" . implode("','",$ar['arr']) . "'], dep : ['" . implode("','",$ar['dep']) . "'], id : ['" . implode("','",$ar['id']) . "'] },";
 	}
 	$rwy_flow .= " };";
-	$js_globals .= $rwy_flow;				
+	$js_globals .= $rwy_flow;
 	return $js_globals;
 }
 */
