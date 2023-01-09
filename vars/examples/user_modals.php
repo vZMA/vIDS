@@ -132,7 +132,7 @@
             </div>
         </div>
 	</div>
-	<!-- Weater Information - modal available in local and TRACON view -->
+	<!-- Weather Information - modal available in local and TRACON view -->
 	<!-- Use this link to find products for your ARTCC: https://www.weather.gov/aviation/cwsu -->
     <div id="WX" class="modal fade">
         <div class="modal-dialog modal-lg">
@@ -143,13 +143,14 @@
                 </div>
                 <div class="modal-body">
 					<ul class="nav nav-tabs" id="weatherInfo">
-						<li class="active"><a href="#wx_terminal" data-toggle="tab">ATL Terminal</a></li>
+						<li class="active"><a href="#wx_terminal" data-toggle="tab">ORD Terminal</a></li>
 						<li><a href="#wx_video" data-toggle="tab">Video Briefing</a></li>
-						<li><a href="#wx_gates" data-toggle="tab">A80 Convective Gates</a></li>
-						<li><a href="#wx_radar" data-toggle="tab">ZTL Wx Radar</a></li>
-						<li><a href="#wx_satellite" data-toggle="tab">ZTL Wx Satellite</a></li>
-						<li><a href="#wx_rvr" data-toggle="tab">ATL RVR</a></li>
-						<li><a href="#wx_sigmets" data-toggle="tab">ZTL SIGMETS</a></li>
+						<li><a href="#wx_gates" data-toggle="tab">C90 Convective Gates</a></li>
+						<li><a href="#wx_radar" data-toggle="tab">ZAU Wx Radar</a></li>
+						<li><a href="#wx_satellite" data-toggle="tab">ZAU Wx Satellite</a></li>
+						<li><a href="#wx_rvr" data-toggle="tab">ZAU RVR</a></li>
+						<li><a href="#wx_bs" data-toggle="tab">ZAU Briefing Sheet</a></li>
+						<li><a href="#wx_sigmets" data-toggle="tab">ZAU SIGMETS</a></li>
 						<li><a href="#wx_prog" data-toggle="tab">National Prog</a></li>
 						
 					</ul>
@@ -157,7 +158,7 @@
 					<div class="tab-pane active" id="wx_terminal">
 						<h4><?php echo DEFAULT_AFLD_ID; ?> Terminal Wx</h4>
 						<div id="weather_request"></div> <!-- METAR & TAF are auto-filled here, don't delete or modify this line -->
-						<div><img id="radar_loop" src="https://radar.weather.gov/ridge/lite/KFFC_loop.gif" alt="FFC Radar Loop" /></div>
+						<div><img id="radar_loop" src="https://radar.weather.gov/ridge/standard/KLOT_loop.gif" alt="LOT Radar Loop" /></div>
 					</div>
 					<div class="tab-pane" id="wx_video">
 						<h4>ZTL Pre-Duty Video Wx Brief</h4>
@@ -186,6 +187,10 @@
 					<div class="tab-pane" id="wx_prog">
 						<h4>National Prognostic Chart</h4>
 						<a href="https://www.weather.gov/images/ztl/wpc_loop.gif" target="_blank"><img id="wx_prog_s" src="https://www.weather.gov/images/ztl/wpc_loop.gif" alt="Prog" /></a>
+					</div>
+					<div class="tab-pane" id="wx_bs">
+						<h4>Weather Briefing Sheet</h4>
+						<a href="https://www.weather.gov/media/zau/product/zwb.pdf" target="_blank"><img id="wx_prog_s" src="https://www.weather.gov/media/zau/product/zwb.pdf" alt="Prog" /></a>
 					</div>
                 </div>
                 </div>	

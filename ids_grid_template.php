@@ -25,7 +25,7 @@
 	<form><input type="hidden" id="display_template" value="local" /></form>
 		<div id="header" class="row" style="border:2px solid white">
 			<div class="col-sm-2" style="text-align:left; vertical-align:middle">
-				<img src="img/logo.png" height="50px" style="margin-top:15px"/>
+				<img src="img/logo.png" height="70px" style="margin-top:15px"/>
 			</div>
 			<div class="col-sm-8 ids-header template_local"><?php echo DEFAULT_AFLD_ID; ?> ATCT</div>
 			<div class="col-sm-8 ids-header template_a80"><?php echo TRACON_LONG_NAME; ?></div>
@@ -153,11 +153,11 @@
 			controller_display($positions[2][0],$positions[2][1],$positions[2][2]);
 			?>
 			</div>
-			<div class="col-sm-12 template_a80 cntlPos" id="grid5x1">
+			<!--<div class="col-sm-12 template_a80 cntlPos" id="grid5x1">
 			<?php //controller_display(TRACON_ID . " Outer",array('M'=>'M','W'=>'W','Z'=>'Z','R'=>'R','E'=>'E','3E'=>'3E'),array('N'=>'N','P'=>'P','F'=>'F','X'=>'X','G'=>'G','C43'=>'C43')); 
 			controller_display($positions[7][0],$positions[7][1],$positions[7][2]);
 			?>
-			</div>
+			</div>-->
 		</div>
 		<div class="row" style="border-bottom:0px">
 			<div class="col-sm-12"><span class="cell_header">PIREPs</span><div onclick="clearStyle(this);""><textarea id="PIREP_info" class="txt_low" rows="3" readonly></textarea></div></div>
@@ -260,14 +260,14 @@
 				}?>
 			</ul>
 		</div>
-		<a href="#WX" data-remote="https://www.aviationweather.gov/taf/data?ids=katl&format=decoded&metars=on&date=&submit=Get+TAF+data" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal" data-target="#WX" onClick="fetchWeather('K<?php echo DEFAULT_AFLD_ID; ?>');"><i class="fas fa-cloud fa-lg"></i><br/>WX</a>
+		<a href="#WX" data-remote="https://www.aviationweather.gov/taf/data?ids=kord&format=decoded&metars=on&date=&submit=Get+TAF+data" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal" data-target="#WX" onClick="fetchWeather('K<?php echo DEFAULT_AFLD_ID; ?>');"><i class="fas fa-cloud fa-lg"></i><br/>WX</a>
 		<a href="#RECAT" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-plane-arrival fa-lg"></i><br/>RECAT</a>
 		<a href="#FREQS" class="btn btn-lg btn-primary template_local" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-broadcast-tower fa-lg"></i><br/>FREQS</a>
 		<a href="#aFREQS" class="btn btn-lg btn-primary template_a80" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-broadcast-tower fa-lg"></i><br/>FREQS</a>
 		<a href="#ARSPC" class="btn btn-lg btn-primary template_local" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-map-marked-alt fa-lg"></i><br/>ARSPC</a>
 		<a href="#aARSPC" class="btn btn-lg btn-primary template_a80" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-map-marked-alt fa-lg"></i><br/>ARSPC</a>
 		<a href="#PROC" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal" onclick="loadProc('K<?php echo DEFAULT_AFLD_ID; ?>');"><i class="fas fa-file-invoice fa-lg"></i><br/>PROC</a>
-		<a href="#ROTG" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-plane-departure fa-lg"></i><br/>ROTG</a>
+		<!--<a href="#ROTG" class="btn btn-lg btn-primary" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-plane-departure fa-lg"></i><br/>ROTG</a>-->
 		<a href="#SOP" class="btn btn-lg btn-primary template_local" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-book fa-lg"></i><br/>SOP</a>
 		<a href="#aSOP" class="btn btn-lg btn-primary template_a80" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-book fa-lg"></i><br/>SOP</a>
 		<a href="#LOA" class="btn btn-lg btn-primary template_local" data-toggle="modal" data-bs-toggle="modal"><i class="fas fa-handshake fa-lg"></i><br/>LOA</a>

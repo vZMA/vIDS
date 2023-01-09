@@ -40,7 +40,7 @@ define('DEFAULT_AFLD_ICAO', 'KORD');
 // Large TRACON ID. Ex: A80
 define('TRACON_ID', 'C90');
 // Large TRACON long name. Ex: A80 Atlanta Large TRACON
-define('TRACON_LONG_NAME', 'Chicago TRACON');
+define('TRACON_LONG_NAME', 'C90 Chicago TRACON');
 // Traffic flow direction - displayed in the IDS next to the ATIS ID (Ex. EAST/WEST). Create custom flow names by adding them to this array in format RWY ID=>FLOW NAME (Ex. '09'=>'EAST'). Only enter runway numbers - do not enter left/right/center characters.
 $flow_override = array('09'=>'EAST','10'=>'EAST','27'=>'WEST','28'=>'WEST');
 // Arrival runways

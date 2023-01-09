@@ -31,7 +31,7 @@ $error = false;
 $error_msg = array();
 $reply_dataset['template'] = null;
 $refresh = false;
-//$init_datasource = false; // Set true when the data source (DB or .dat files) are empty and need to be initialized (like on a first run)
+$init_datasource = false; // Set true when the data source (DB or .dat files) are empty and need to be initialized (like on a first run)
 
 // If a template is requested, find the template and import it
 if(intval($template) > 0) { // Zero is the default airfield template
@@ -196,7 +196,14 @@ foreach($airfields as $afld) {
 		}
 	}
 */
-	if(!$afld_data['atis_online'] || !isset($afld_data['atis_online'])) { // vATIS is offline or not found in status array... set fields appropriately
+$atis_unavailable = false;
+if(!isset($afld_data['atis_online'])) {
+	$atis_unavailable = true;
+}
+elseif(!$afld_data['atis_online']) {
+	$atis_unavailable = true;
+}
+if($atis_unavailable) {
 		$afld_data['atis_online'] = 0;
 		$afld_data['atis_code'] = "--";
 		$afld_data['traffic_flow'] = "OFFLINE";
@@ -404,10 +411,10 @@ function traffic_flow($rwy) { // Determines traffic flow direction based on acti
 	else if (($rwy > 4)&&($rwy < 12)) {
 		$traffic_flow = "EAST";
 	}	
-	else if (($rwy > 12)&&($rwy < 22)) {
+	else if (($rwy > 12)&&($rwy < 21)) {
 		$traffic_flow = "SOUTH";
 	}
-	else if (($rwy > 22)&&($rwy < 31)) {
+	else if (($rwy > 21)&&($rwy < 31)) {
 		$traffic_flow = "WEST";
 	}	
 	else {

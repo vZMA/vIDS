@@ -105,7 +105,7 @@ include "ids_grid_template.php";
 				<li><a href="#RECAT" data-toggle="modal">RECAT</a></li>
 				<li><a href="#aFREQS" data-toggle="modal">FREQs</a></li>
 				<li><a href="#aARSPC" data-toggle="modal">Airspace</a></li>
-				<li><a href="#ROTG" data-toggle="modal">ROTG</a></li>
+				<!--<li><a href="#ROTG" data-toggle="modal">ROTG</a></li>-->
 				<li><a href="#aSOP" data-toggle="modal">SOP</a></li>				
 				<li><a href="#aLOA" data-toggle="modal">LOA</a></li>	
 			</ul>
@@ -148,7 +148,7 @@ else {
 	print "	<div id=\"menu\" class=\"row\" style=\"border:0px\">
 			<div class=\"col-lg-6 menu_button\"><br/>
 			<a onclick=\"showLocalIDS('local');\" class=\"btn btn-lg btn-block btn-primary\"><i class=\"fas fa-plane-departure fa-lg\"></i><br/>Tower<br/>IDS</a><br/>
-			<a onclick=\"showLocalIDS('a80');\" class=\"btn btn-lg btn-block btn-primary\"><i class=\"fas fa-layer-group fa-lg\"></i><br/>A80 Atlanta<br/>Large TRACON IDS</a><br/>";
+			<a onclick=\"showLocalIDS('c90');\" class=\"btn btn-lg btn-block btn-primary\"><i class=\"fas fa-layer-group fa-lg\"></i><br/>C90 Chicago<br/>TRACON IDS</a><br/>";
 	if (is_sysad($vatsim_cid,$artcc_staff,$sso_endpoint)) { print "<a onclick=\"modAccessList('black','fetch'); modAccessList('white','fetch');\" href=\"#ADMIN\" class=\"btn btn-lg btn-block btn-primary\" data-toggle=\"modal\" data-bs-toggle=\"modal\"><i class=\"fas fa-user-tie fa-lg\"></i><br/>System<br/>Administration</a><br/>"; }
 	if (AIRSPACE_EXPLORER) {
 		print "	<a href=\"asx/\" target=\"_blank\" class=\"btn btn-lg btn-block btn-primary\"><i class=\"fas fa-globe fa-lg\"></i><br/>Airspace<br/>Explorer</a><br/>";

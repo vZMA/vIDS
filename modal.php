@@ -835,11 +835,11 @@ include_once "vars/user_modals.php"; // User-defined modal content moved here
 				<p>At the bottom of the grid, there is a row of buttons that each launch a unique pop-up with additional information or settings.</p>
 				<ul>
 				<li>HOME: return to landing menu. Also used to submit a bug report.</li>
-				<li>WX: button displays local ATL METAR, TAF, and NEXRAD.</li>
+				<li>WX: button displays local <?php echo DEFAULT_AFLD_ID; ?> METAR, TAF, and NEXRAD.</li>
 				<li>RECAT: displays the current consolidated wake turbulence guidance.</li>
 				<li>FREQS: displays the facility frequency map.</li>
 				<li>ARSPC: depiction of facility/position airspace.</li>
-				<li>ROTG: shows the current RNAV-off-the-ground cheat sheet.</li>
+				<!--<li>ROTG: shows the current RNAV-off-the-ground cheat sheet.</li>-->
 				<li>SOP: launches the facility SOP.</li>
 				<li>LOA: displays applicable LOAs.</li>
 				<li>PIREP: allows a controller to enter a PIREP.</li>
@@ -897,11 +897,11 @@ include_once "vars/user_modals.php"; // User-defined modal content moved here
 				<p>At the bottom of the grid, there is a row of buttons that each launch a unique pop-up with additional information or settings.</p>
 				<ul>
 				<li>HOME: return to landing menu. Also used to submit a bug report.</li>
-				<li>WX: button displays local ATL METAR, TAF, and NEXRAD.</li>
+				<li>WX: button displays local <?php echo DEFAULT_AFLD_ID; ?> METAR, TAF, and NEXRAD.</li>
 				<li>RECAT: displays the current consolidated wake turbulence guidance.</li>
 				<li>FREQS: displays the facility frequency map.</li>
 				<li>ARSPC: depiction of facility/position airspace.</li>
-				<li>ROTG: shows the current RNAV-off-the-ground cheat sheet.</li>
+				<!--<li>ROTG: shows the current RNAV-off-the-ground cheat sheet.</li>-->
 				<li>SOP: launches the facility SOP.</li>
 				<li>LOA: displays applicable LOAs.</li>
 				<li>PIREP: allows a controller to enter a PIREP.</li>
